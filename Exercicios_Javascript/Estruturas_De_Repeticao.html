@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de tabuada Interativo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de tabuada Interativo</h1>
+        <p>Insira um numero para gerar a tabuada.</p>
+        <input type="number" id="numeroInput" placeholder="Digite um número">
+        <button onclick="gerarTabuada()">Gerar Tabuada</button>
+        <div id="tabuada-output"></div>
+    </div>
+    <script>
+        function gerarTabuada() {
+            let numero = document.getElementById('numeroInput').value;
+            numero = parseInt(numero);
+
+            if(numero >= 1 && numero <= 10 ) {
+                let resultadoDiv = document.getElementById('tabuada-output');
+                resultadoDiv.innerHTML = "";
+
+                let tabuadaTexto = "";
+                for (let i = 1; i <= 10; i++) {
+                    let resultado = numero * i;
+                    tabuadaTexto += `${numero} x ${i} = ${resultado}\n`;
+                }
+              resultadoDiv.innerText = tabuadaTexto;
+
+            } else {
+
+                alert("por favor, insira um numero valido entre 1 e 10. ");
+            }
+        }
+    </script>
+    
+</body>
+</html>
